@@ -15,12 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductController {
     private IProductService _productService;
     public  ProductController(IProductService productService){
-        _productService = productService;
+        this._productService = productService;
     }
 
     @GetMapping("{id}")
     public GenericProductDto getProductById(@PathVariable("id") long id){
-       return _productService.getProductById(id);
+       return this._productService.getProductById(id);
+        //return "product is hit";
     }
 
     public void deleteProductById(long id)
