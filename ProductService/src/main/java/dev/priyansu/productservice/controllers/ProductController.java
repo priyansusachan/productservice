@@ -21,6 +21,7 @@ public class ProductController {
     @GetMapping("{id}")
     public GenericProductDto getProductById(@PathVariable("id") long id){
        return this._productService.getProductById(id);
+
         //return "product is hit";
     }
 
